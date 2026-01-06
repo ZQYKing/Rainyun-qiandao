@@ -9,9 +9,8 @@ RUN version=$(google-chrome -version |awk '{print $3}') && \
     unzip chromedriver-linux64.zip && \
     git clone https://github.com/ZQYKing/Rainyun-qiandao.git
 
-WORKDIR /Rainyun-Qiandao
+WORKDIR /Rainyun-qiandao
 RUN pip3 install -r requirements.txt && \
-    rm -rf chromedriver && \
     cp ../chromedriver-linux64/chromedriver  ./ && \
     chmod +x chromedriver
 
